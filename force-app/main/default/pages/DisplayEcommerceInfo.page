@@ -1,0 +1,23 @@
+<apex:page >
+    <apex:pageBlock >
+        <apex:pageBlockSection >
+            <apex:sectionHeader title="Ligas de comercio electronico" subtitle="{!$User.FirstName}"/>
+        </apex:pageBlockSection>
+        <!-- <apex:pageBlockSection >
+        	<apex:outputText value="Home Carrito:"></apex:outputText>
+            <apex:pageBlockSection >
+            	<apex:outputText value="https://www.occ.com.mx/tienda/empresas/?utm_source=ventas&utm_medium=sf&utm_campaign={!$User.Id}"></apex:outputText>
+                <br/>
+            	<apex:outputLink value="https://www.occ.com.mx/tienda/empresas/?utm_source=ventas&utm_medium=sf&utm_campaign={!$User.Id}" id="theLink" target="_blank">Ecommerce</apex:outputLink>
+            </apex:pageBlockSection>
+        </apex:pageBlockSection> -->
+        <apex:pageBlockSection >
+            <apex:outputText value="Personalizador de planes Ecommerce:"></apex:outputText>
+            <apex:pageBlockSection >
+                <apex:outputText value="https://www.occ.com.mx/tienda/empresas/personaliza-tu-plan/?utm_source=ventas&utm_medium=sf&utm_campaign={!$User.Id}"></apex:outputText>
+                <br/>
+                <apex:outputLink value="https://www.occ.com.mx/tienda/empresas/personaliza-tu-plan/?utm_source=ventas&utm_medium=sf&utm_campaign={!$User.Id}" id="theLink1" target="_blank">Accesar a Personalizador de planes Ecommerce</apex:outputLink>
+            </apex:pageBlockSection>
+        </apex:pageBlockSection>
+    </apex:pageBlock>
+</apex:page>

@@ -1,0 +1,16 @@
+<apex:page controller="AccountMigrationButtonController" tabStyle="Account" showHeader="true" sidebar="true" standardStylesheets="true">
+	<apex:form >
+
+    	<apex:sectionHeader title="Migración de la Cuenta" subtitle="{!account.Name}"/>
+    	
+        <apex:pageMessage summary="¿Está usted seguro de migrar la cuenta?. Oprima Aceptar, de lo contrario Cancelar." severity="info" strength="3" />
+        
+        <apex:pageBlock >
+        	<apex:pageBlockButtons location="top">
+            	<apex:commandButton value="Aceptar" action="{!invokeIsNewBusinessModelAccount}"/>
+                <apex:commandButton value="Cancelar" action="{!BackToAccount}"/>
+            </apex:pageBlockButtons>
+        </apex:pageBlock>    
+
+    </apex:form>
+</apex:page>

@@ -1,0 +1,65 @@
+<apex:page controller="GetContractedPackagesController" tabStyle="Account" showHeader="false" sidebar="false" standardStylesheets="true">
+    <apex:sectionHeader title="{!accountName}"></apex:sectionHeader> 
+    <apex:form >
+        <apex:pageBlock title="Historial de paquetes contratados por cuenta" id="pageBlock">
+            <!-- <apex:pageBlockButtons location="top">
+                <apex:commandButton value="View" action="{!ViewData}" id="theButton" rerender="pageBlock"></apex:commandButton>
+            </apex:pageBlockButtons>
+             -->
+            <apex:pageMessages ></apex:pageMessages>
+            <div align="right" style="display:{!IF(NOT(ISNULL(fullContractedSummaryList)),'block','none')}">
+                <font size="1pt">Page #:&nbsp;<apex:outputLabel value="{!paginador.PageNumber}"/>&nbsp;de&nbsp;<apex:outputLabel value="{!paginador.totalPageNumber}"/>&nbsp;&nbsp;&nbsp;&nbsp;</font>
+                <apex:commandButton value="Inicio" action="{!FirstBtnClick}" disabled="{!paginador.previousButtonEnabled}" reRender="pageBlock"></apex:commandButton>
+                <apex:commandButton value="Anterior" action="{!previousBtnClick}" disabled="{!paginador.previousButtonEnabled}" reRender="pageBlock"></apex:commandButton>
+                <apex:commandButton value="Siguiente" action="{!nextBtnClick}" reRender="pageBlock" disabled="{!paginador.nextButtonDisabled}" ></apex:commandButton>
+                <apex:commandButton value="Ultimo" action="{!LastBtnClick}" reRender="pageBlock" disabled="{!paginador.nextButtonDisabled}" ></apex:commandButton>
+            </div>
+            <apex:pageBlockTable value="{!pageContractSummaryList}" var="ss" rendered="{!NOT(ISNULL(pageContractSummaryList))}" rows="{!paginador.PageSize}">
+                <!-- <apex:column value="{!ss.PackageCode}">
+                    <apex:facet name="header">Código del producto</apex:facet>
+                </apex:column> -->
+                <apex:column value="{!ss.PackageName}">
+                    <apex:facet name="header">Nombre del Paquete</apex:facet>
+                </apex:column>
+                <apex:column value="{!ss.SalesforceDocument}">
+                    <apex:facet name="header">Folio oportunidad</apex:facet>
+                </apex:column>
+                <apex:column value="{!ss.ServiceName}">
+                    <apex:facet name="header">Servicio</apex:facet>
+                </apex:column>
+                <apex:column value="{!ss.ActivationDate}">
+                    <apex:facet name="header">Fecha Activación</apex:facet>
+                </apex:column>
+                <apex:column value="{!ss.ExpirationPeriod} {!ss.ValidityType}">
+                    <apex:facet name="header">Vigencia</apex:facet>
+                </apex:column>
+                <apex:column value="{!ss.ExpirationDate}">
+                    <apex:facet name="header">Fecha Expiración</apex:facet>
+                </apex:column>
+                
+                <apex:column value="{!ss.PurchasedItems}">
+                    <apex:facet name="header">Comprados</apex:facet>
+                </apex:column>
+                <apex:column value="{!ss.UsedItems}">
+                    <apex:facet name="header">Consumidos</apex:facet>
+                </apex:column>
+                <apex:column value="{!ss.AvailableItems}">
+                    <apex:facet name="header">Disponibles</apex:facet>
+                </apex:column>
+                <apex:column value="{!ss.PurchaseStateDescription}">
+                    <apex:facet name="header">Estado Venta</apex:facet>
+                </apex:column>
+            </apex:pageBlockTable>
+            <div align="right" style="display:{!IF(NOT(ISNULL(fullContractedSummaryList)),'block','none')}">
+                <br/>
+                <font size="1pt">Page #:&nbsp;<apex:outputLabel value="{!paginador.PageNumber}"/>&nbsp;de&nbsp;<apex:outputLabel value="{!paginador.totalPageNumber}"/>&nbsp;&nbsp;&nbsp;&nbsp;</font>
+                <apex:commandButton value="Inicio" action="{!FirstBtnClick}" disabled="{!paginador.previousButtonEnabled}" reRender="pageBlock"></apex:commandButton>
+                <apex:commandButton value="Previous" action="{!previousBtnClick}" disabled="{!paginador.previousButtonEnabled}" reRender="pageBlock"></apex:commandButton>
+                <apex:commandButton value="Next" action="{!nextBtnClick}" reRender="pageBlock" disabled="{!paginador.nextButtonDisabled}" ></apex:commandButton>
+                <apex:commandButton value="Ultimo" action="{!LastBtnClick}" reRender="pageBlock" disabled="{!paginador.nextButtonDisabled}" ></apex:commandButton>
+            </div>
+        </apex:pageBlock>
+    </apex:form>
+   
+  <!-- End Default Content REMOVE THIS -->
+</apex:page>

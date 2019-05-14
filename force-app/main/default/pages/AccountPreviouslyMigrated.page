@@ -1,0 +1,20 @@
+<apex:page controller="AccountMigrationButtonController" tabStyle="Account" showHeader="true" sidebar="true" standardStylesheets="true">
+	<apex:form >
+        
+        <apex:sectionHeader title="Migración de Cuenta" subtitle="{!account.Name}"/>
+        
+        <apex:pageMessages />
+        
+        <apex:pageBlock >
+        
+            <apex:pageBlockButtons location="bottom">
+                <apex:commandButton value="Aceptar" action="{!BackToAccount}"/>
+            </apex:pageBlockButtons>
+			
+			<apex:outputText value="Cuenta migrada previamente, La información de la cuenta ha sido actualizada," /><br />
+			<apex:outputText value="Validar los datos de la sección Modelo de paquetes" />
+        
+        </apex:pageBlock>
+        
+    </apex:form>
+</apex:page>
